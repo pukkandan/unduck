@@ -65,7 +65,7 @@ function noSearchDefaultPageRender() {
 
 const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? config.defaultBang;
 
-const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
+const defaultBang = bangs.findLast((b) => b.t === LS_DEFAULT_BANG);
 
 function getBangredirectUrl() {
   const url = new URL(window.location.href);

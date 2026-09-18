@@ -20,8 +20,13 @@ function noSearchDefaultPageRender() {
   app.innerHTML = `
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
       <div class="content-container">
+<<<<<<< HEAD:src/main.js
         <h1>Unduck-custombangs</h1>
         <p>This is a selfhosted version of t3dotgg/unduck</p>
+=======
+        <h1>Und*ck</h1>
+        <p>DuckDuckGo's bang redirects are too slow. Add the following URL as a custom search engine to your browser. Enables <a href="https://duckduckgo.com/bang.html" target="_blank">all of DuckDuckGo's bangs.</a></p>
+>>>>>>> origin/upstream:src/main.ts
         <div class="url-container"> 
           <input 
             type="text" 
@@ -70,20 +75,24 @@ function getBangredirectUrl() {
     return null;
   }
 
-  const match = query.match(/!([a-z0-9]+)/i);
+  const match = query.match(/!(\S+)/i);
 
   const bangCandidate = match?.[1]?.toLowerCase();
   const selectedBang = bangs.find((b) => b.t === bangCandidate) ?? defaultBang;
 
   // Remove the first bang from the query
-  const cleanQuery = query.replace(/![a-z0-9]+\s*/i, "").trim();
+  const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
+
+  // If the query is just `!gh`, use `github.com` instead of `github.com/search?q=`
+  if (cleanQuery === "")
+    return selectedBang ? `https://${selectedBang.d}` : null;
 
   // Format of the url is:
   // https://www.google.com/search?q={{{s}}}
   const searchUrl = selectedBang?.u.replace(
     "{{{s}}}",
     // Replace %2F with / to fix formats like "!ghr+t3dotgg/unduck"
-    encodeURIComponent(cleanQuery).replace(/%2F/g, "/")
+    encodeURIComponent(cleanQuery).replace(/%2F/g, "/"),
   );
   if (!searchUrl) return null;
 

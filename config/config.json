@@ -1,4 +1,22 @@
 {
-    "defaultBang": "ddg",
-    "customBangs": []
+    "defaultBang": "g",
+    "customBangs": [{
+        "bangWithoutExclamationMark": "gt",
+        "searchUrl": "https://google.com/search?btnI=1&q={{{s}}}"
+    }, {
+        "bangWithoutExclamationMark": "yt",
+        "searchUrl": "https://www.youtube.com/results?search_query=before:2100+{{{s}}}"
+    }, {
+        "bangWithoutExclamationMark": "=",
+        "searchUrl": "https://www.wolframalpha.com/input?i={{{s}}}"
+    }, {
+        "bangWithoutExclamationMark": "v",
+        "searchUrl": "https://www.youtube.com/watch?v={{{s}}}"
+    }, {
+        "bangWithoutExclamationMark": "pl",
+        "searchUrl": "https://www.youtube.com/playlist?list={{{s}}}"
+    }, {
+        "bangWithoutExclamationMark": "r",
+        "searchUrl": "https://www.reddit.com/r/{{{s}}}"
+    }]
 }

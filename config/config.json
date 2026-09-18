@@ -1,7 +1,7 @@
 {
     "defaultBang": "g",
     "customBangs": [{
-        "bangWithoutExclamationMark": "gt",
+        "bangWithoutExclamationMark": "gt1",
         "searchUrl": "https://google.com/search?btnI=1&q={{{s}}}"
     }, {
         "bangWithoutExclamationMark": "yt",

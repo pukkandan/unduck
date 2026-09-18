@@ -3,6 +3,15 @@
 export let bangs = [
   {
     c: "Tech",
+    d: "npmx",
+    r: 147,
+    s: "npmx",
+    sc: "Programming",
+    t: "npmx",
+    u: "https://npmx.dev/search?q={{{s}}}",
+  },
+  {
+    c: "Tech",
     d: "www.01net.com",
     r: 4,
     s: "01net",
